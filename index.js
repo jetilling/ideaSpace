@@ -20,6 +20,6 @@ app.use("/node_modules", express.static(path.resolve(__dirname, './node_modules'
 app.use(express.static(__dirname + '/src'));
 app.use(sendSpaFileIfUnmatched);
 
-app.listen(6000, function(){
-  console.log('This part works on ', 6000)
+app.listen(6001, function(){
+  console.log('This part works on ', 6001)
 })
