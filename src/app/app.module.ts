@@ -3,7 +3,10 @@ import { BrowserModule }    from '@angular/platform-browser';
 import { FormsModule }      from '@angular/forms';
 import { HttpModule }       from '@angular/http';
 
+//Components
 import { landingPageComponent } from './landingPage/landing-page.component';
+import { loginComponent }       from './login/login.component';
+import { signupComponent }      from './signup/signup.component';
 
 //Routing
 
@@ -16,7 +19,9 @@ import { landingPageComponent } from './landingPage/landing-page.component';
     HttpModule
   ],
   declarations: [
-    landingPageComponent
+    landingPageComponent,
+    loginComponent,
+    signupComponent
   ],
   providers: [],
   bootstrap: [ landingPageComponent ]
