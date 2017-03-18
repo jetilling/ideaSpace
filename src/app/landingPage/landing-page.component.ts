@@ -8,5 +8,6 @@ import { Component }      from '@angular/core';
 })
 
 export class landingPageComponent {
-  title = 'ideaSpace';
+  title = 'Tova';
+
 }

@@ -1,25 +1,39 @@
+html body {
+  background: black;
+}
+
 .navbar {
-  background: mintcream;
+  background: url('../../imgs/cats.jpg');
+  background-position: 50px;
   width: 100vw;
-  height: 10vh;
+  height: 5vh;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   border-bottom: 1px solid black;
 }
 
-.navbar-title {
-  display: inline-block;
-  margin: 10px;
-}
-
-.navbar nav {
-  display: inline-block;
-  margin: 10px;
-}
-
-.cover img {
-  background: cover;
+.cover {
+  background: mintcream;
+  height: 95vh;
   width: 100vw;
-  overflow: hidden;
+}
+
+.cover-title {
+  display: inline-block;
+  margin: 10px;
+  font-size: 40px;
+  font-family: 'Cutive Mono', monospace;
+}
+
+.links {
+  font-family: 'Cutive Mono', monospace;
+  width: 25vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.link a {
+  display: inline-block;
 }
