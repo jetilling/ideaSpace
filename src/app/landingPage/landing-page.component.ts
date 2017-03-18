@@ -10,5 +10,6 @@ import { loginComponent } from '../login/login.component'
 })
 
 export class landingPageComponent {
-  title = 'ideaSpace';
+  title = 'Tova';
+
 }
