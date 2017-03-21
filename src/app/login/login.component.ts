@@ -7,4 +7,4 @@ import { Component }  from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 
-export class loginComponent {}
+export class LoginComponent {}

@@ -1,6 +1,6 @@
 import { Component }      from '@angular/core';
 
-import { loginComponent } from '../login/login.component'
+import { LoginComponent } from '../login/login.component'
 
 @Component({
   moduleId: module.id,
@@ -9,7 +9,7 @@ import { loginComponent } from '../login/login.component'
   styleUrls: ['./landing-page.component.css']
 })
 
-export class landingPageComponent {
+export class LandingPageComponent {
   title = 'Tova';
 
 }
