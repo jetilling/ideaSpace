@@ -4,11 +4,15 @@ import { FormsModule }      from '@angular/forms';
 import { HttpModule }       from '@angular/http';
 
 //Components
-import { landingPageComponent } from './landingPage/landing-page.component';
-import { loginComponent }       from './login/login.component';
-import { signupComponent }      from './signup/signup.component';
+import { LandingPageComponent } from './landingPage/landing-page.component';
+import { LoginComponent }       from './login/login.component';
+import { SignupComponent }      from './signup/signup.component';
+import { AboutComponent }       from './about/about.component';
+import { ContactComponent }     from './contact/contact.component';
+import { NewsComponent }        from './news/news.component';
 
 //Routing
+import { AppRoutingModule }        from './app-routing.module';
 
 //Modules
 
@@ -16,15 +20,19 @@ import { signupComponent }      from './signup/signup.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   declarations: [
-    landingPageComponent,
-    loginComponent,
-    signupComponent
+    LandingPageComponent,
+    LoginComponent,
+    SignupComponent,
+    AboutComponent,
+    ContactComponent,
+    NewsComponent
   ],
   providers: [],
-  bootstrap: [ landingPageComponent ]
+  bootstrap: [ LandingPageComponent ]
 })
 
 export class AppModule {}

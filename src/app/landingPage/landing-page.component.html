@@ -6,16 +6,16 @@
     <p id="subtitle">Whatever you want</p>
 
     <nav class="links">
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-      <a href="#">News</a>
-      <a href="#">Log in</a>
-      <a href="#">Sign up</a>
+      <a routerLink='/about' routerLinkActive="active">About</a>
+      <a routerLink='/contact' routerLinkActive="active">Contact</a>
+      <a routerLink='/news' routerLinkActive="active">News</a>
+      <a routerLink='/login' routerLinkActive="active">Log in</a>
+      <a routerLink='/signup' routerLinkActive="active">Sign up</a>
     </nav>
     <input class="sidebar-search" type="text" name="" value="">
     <button type="button" name="button" class="sidebar-search-btn">Search</button>
   </section>
   <section class="cover">
-
+    <router-outlet></router-outlet>
   </section>
 </section>
