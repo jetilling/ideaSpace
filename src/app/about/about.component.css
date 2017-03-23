@@ -1,0 +1,48 @@
+.main {
+  width: 75vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: center;*/
+}
+
+.main h1 {
+  margin: 20px;
+  font-size: 40px;
+  font-weight: bolder;
+  font-family: 'Cutive Mono', monospace;
+}
+
+#line {
+  margin-bottom: 10px;
+  width: 50vw;
+  height: 1px;
+  background: red;
+  border: 1px solid red;
+}
+
+
+
+
+
+
+
+
+.footer {
+
+}
+.footer h1 {
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: 'Cutive Mono', monospace;
+}
+
+.subtitle {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.subtitle p {
+  font-size: 10px;
+  font-family: 'Cutive Mono', monospace;
+}
