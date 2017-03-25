@@ -10,9 +10,13 @@ import { SignupComponent }      from './signup/signup.component';
 import { AboutComponent }       from './about/about.component';
 import { ContactComponent }     from './contact/contact.component';
 import { NewsComponent }        from './news/news.component';
+import { DashboardComponent }   from './dashboard/dashboard.component';
 
 //Routing
 import { AppRoutingModule }        from './app-routing.module';
+
+//Services
+import { ErrorHandleService}    from './services/error-handle.service'
 
 //Modules
 
@@ -29,9 +33,10 @@ import { AppRoutingModule }        from './app-routing.module';
     SignupComponent,
     AboutComponent,
     ContactComponent,
-    NewsComponent
+    NewsComponent,
+    DashboardComponent
   ],
-  providers: [],
+  providers: [ErrorHandleService],
   bootstrap: [ LandingPageComponent ]
 })
 
