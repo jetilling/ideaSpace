@@ -6,6 +6,7 @@ import { ContactComponent }     from './contact/contact.component';
 import { NewsComponent }        from './news/news.component';
 import { LoginComponent }       from './login/login.component';
 import { SignupComponent }      from './signup/signup.component';
+import { DashboardComponent }   from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/about', pathMatch: 'full' },
@@ -18,7 +19,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [ RouterModule.forRoot(routes, { useHash: true }) ],
   exports: [ RouterModule ]
 })
 

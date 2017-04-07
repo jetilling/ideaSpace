@@ -18,3 +18,13 @@ export interface IDBUser extends ITokenUser {
     google?: string;
     hash?: string;
 }
+
+export class User {
+    id: number;
+    username: string;
+    password: string;
+    displayname: string;
+    firstName: string;
+    lastName: string;
+    token: string;
+}
