@@ -1,7 +1,7 @@
 import { NgModule }         from '@angular/core';
 import { BrowserModule }    from '@angular/platform-browser';
-import { FormsModule }      from '@angular/forms';
-import { HttpModule }       from '@angular/http';
+import { ReactiveFormsModule, FormsModule }      from '@angular/forms';
+import { HttpModule, JsonpModule }       from '@angular/http';
 
 //Components
 import { LandingPageComponent } from './landingPage/landing-page.component';
@@ -16,16 +16,19 @@ import { DashboardComponent }   from './dashboard/dashboard.component';
 import { AppRoutingModule }        from './app-routing.module';
 
 //Services
-import { ErrorHandleService}    from './services/error-handle.service'
+import { AuthService, AlertService }          from './services/index';
 
 //Modules
+
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    JsonpModule,
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [
     LandingPageComponent,
@@ -36,7 +39,10 @@ import { ErrorHandleService}    from './services/error-handle.service'
     NewsComponent,
     DashboardComponent
   ],
-  providers: [ErrorHandleService],
+  providers: [
+    AuthService,
+    AlertService
+  ],
   bootstrap: [ LandingPageComponent ]
 })
 

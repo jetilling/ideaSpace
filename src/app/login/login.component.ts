@@ -1,8 +1,8 @@
 import { Component, OnInit }                             from '@angular/core';
 import {FormBuilder, FormControl, Validators, FormGroup} from '@angular/forms';
 import {Router}                                          from '@angular/router';
-import { AuthService }                                   from 'ng2-ui-auth';
-import { ILoginData }                                    from '../interfaces';
+import { AuthService }                                   from '../services/auth.service';
+import { ILoginData }                                     from '../interfaces';
 
 
 @Component({
@@ -14,26 +14,17 @@ import { ILoginData }                                    from '../interfaces';
 
 export class LoginComponent implements OnInit {
 
-  form: FormGroup;
-
   constructor(private auth: AuthService,
-              private router: Router,
-              private fb: FormBuilder){}
+              private router: Router){}
 
 
   ngOnInit() {
-    this.form = this.fb.group({
-      email: new FormControl('', [Validators.required, Validators.minLength(7)]),
-      password: new FormControl('', [Validators.requied, Validators.minLength(8)])
-    })
+
   }
 
-  login(loginData: ILoginData){
-    this.auth.login(loginData)
-      .subscribe({
-        error: (err: any) => this.ed.handleError(err),
-        complete: () => this.router.navigateByUrl('dashboard')
-      });
+  onLogin(email: string, password: string) {
+    this.auth.login(email, password);
   }
+
 
 }
