@@ -9,17 +9,14 @@ import 'rxjs/add/operator/map';
 export class AuthService {
   constructor(private http: Http) {}
 
-  login(email: string, password: string) {
-      return this.http.post('/auth/login', JSON.stringify({ email: email, password: password }))
-          .map((response: Response) => {
-              // login successful if there's a jwt token in the response
-              console.log("Login: ", response);
-              let user = response.json();
-              if (user && user.token) {
-                  // store user details and jwt token in local storage to keep user logged in between page refreshes
-                  localStorage.setItem('TellTova_User', JSON.stringify(user));
-              }
-          });
+  login(user: User): Observable<User> {
+    console.log(user);
+    const url = '/auth/login';
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+      return this.http.post(url, JSON.stringify(user), options)
+          .map(this.extractData)
+          .catch(this.handleError);
   }
 
   create(user: User): Observable<User> {
@@ -41,7 +38,7 @@ export class AuthService {
        // create authorization header with jwt token
        let tellTovaUser = JSON.parse(localStorage.getItem('TellTova_User'));
        if (tellTovaUser && tellTovaUser.token) {
-           let headers = new Headers({ 'Authorization': 'Bearer ' + tellTovaUser.token });
+           let headers = new Headers({ 'Authorization': tellTovaUser.token });
            console.log(headers);
            return new RequestOptions({ headers: headers });
        }
