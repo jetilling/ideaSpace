@@ -24,13 +24,13 @@ export class SignupComponent {
       this.auth.create(this.model)
            .subscribe(
                res => {
-          //         this.alertService.success('Registration successful', true);
+                   this.alertService.success('Registration successful', true);
                    console.log("STUFF: ", res);
                    if (res && res.token) {
                         // store user details and jwt token in local storage to keep user logged in between page refreshes
                         localStorage.setItem('TellTova_User', res.token);
                     }
-          //         //this.router.navigate(['/login']);
+                   this.router.navigate(['/about']);
         },
               error => {
                   console.log("error", error);
@@ -38,4 +38,9 @@ export class SignupComponent {
                   this.loading = false;
               });
   }
+
+  // login() {
+  //   console.log(this.model.loginEmail, this.model.loginPassword);
+  //   //this.auth.login(email, password);
+  // }
 }

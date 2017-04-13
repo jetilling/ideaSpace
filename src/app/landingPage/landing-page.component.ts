@@ -1,4 +1,4 @@
-import { Component }      from '@angular/core';
+import { Component, OnInit }      from '@angular/core';
 
 import { LoginComponent } from '../login/login.component'
 
@@ -9,7 +9,9 @@ import { LoginComponent } from '../login/login.component'
   styleUrls: ['./landing-page.component.css']
 })
 
-export class LandingPageComponent {
+export class LandingPageComponent implements OnInit {
   title = 'Tova';
-
+  ngOnInit() {
+    console.log(localStorage)
+  }
 }
