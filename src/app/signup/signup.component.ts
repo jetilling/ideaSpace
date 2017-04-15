@@ -1,4 +1,4 @@
-import { Component }    from '@angular/core';
+import { Component, OnInit }    from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AlertService, AuthService} from '../services/index';
@@ -10,14 +10,34 @@ import { AlertService, AuthService} from '../services/index';
   styleUrls: ['./signup.component.css']
 })
 
-export class SignupComponent {
+export class SignupComponent implements OnInit {
   model: any = {};
   loading = false;
+  loginForm = true;
+  signupForm = false;
 
   constructor(
       private router: Router,
       private auth: AuthService,
       private alertService: AlertService) { }
+
+  ngOnInit() {
+    if(localStorage.TellTova_User){
+    this.auth.getUser()
+      .subscribe(
+        res => {
+          if (res){
+            this.router.navigate(['/dashboard'])
+          }
+        }
+      )
+    }
+  }
+
+  switchForms() {
+    this.loginForm = false;
+    this.signupForm = true;
+  }
 
   register() {
       this.loading = true;
@@ -25,12 +45,10 @@ export class SignupComponent {
            .subscribe(
                res => {
                    this.alertService.success('Registration successful', true);
-                   console.log("STUFF: ", res);
                    if (res && res.token) {
-                        // store user details and jwt token in local storage to keep user logged in between page refreshes
                         localStorage.setItem('TellTova_User', res.token);
                     }
-                   this.router.navigate(['/about']);
+                   this.router.navigate(['/dashboard']);
         },
               error => {
                   console.log("error", error);
@@ -39,8 +57,4 @@ export class SignupComponent {
               });
   }
 
-  // login() {
-  //   console.log(this.model.loginEmail, this.model.loginPassword);
-  //   //this.auth.login(email, password);
-  // }
 }

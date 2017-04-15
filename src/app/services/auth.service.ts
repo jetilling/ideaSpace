@@ -1,7 +1,7 @@
 import { Injectable }                               from '@angular/core';
 import { Http, Headers, RequestOptions, Response }  from '@angular/http';
 import { User, ISignupData }                        from '../interfaces';
-import { Observable } from 'rxjs/Observable';
+import { Observable }                               from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
@@ -9,8 +9,14 @@ import 'rxjs/add/operator/map';
 export class AuthService {
   constructor(private http: Http) {}
 
+  getUser(): Observable<string> {
+    const url = '/api/me'
+    return this.http.get(url, this.jwt())
+        .map(this.extractData)
+        .catch(this.handleError);
+  }
+
   login(user: User): Observable<User> {
-    console.log(user);
     const url = '/auth/login';
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
@@ -20,7 +26,6 @@ export class AuthService {
   }
 
   create(user: User): Observable<User> {
-    console.log(user);
     const url = '/auth/signup';
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
@@ -36,10 +41,9 @@ export class AuthService {
 
   private jwt() {
        // create authorization header with jwt token
-       let tellTovaUser = JSON.parse(localStorage.getItem('TellTova_User'));
-       if (tellTovaUser && tellTovaUser.token) {
-           let headers = new Headers({ 'Authorization': tellTovaUser.token });
-           console.log(headers);
+       let tellTovaUser = localStorage.getItem('TellTova_User');
+       if (tellTovaUser && tellTovaUser) {
+           let headers = new Headers({ 'Authorization': tellTovaUser});
            return new RequestOptions({ headers: headers });
        }
    }

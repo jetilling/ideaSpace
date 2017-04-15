@@ -12,6 +12,6 @@ import { LoginComponent } from '../login/login.component'
 export class LandingPageComponent implements OnInit {
   title = 'Tova';
   ngOnInit() {
-    console.log(localStorage)
+
   }
 }
