@@ -1,0 +1,30 @@
+.authStuff {
+  width: 75vw;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-face {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.face {
+  font-family: 'Questrial', sans-serif;
+  font-size: 100px;
+  margin-bottom: 20px;
+  color: #414C4B
+}
+
+.auth-text {
+  font-family: 'Cutive Mono', monospace;
+  color: #414C4B;
+}
+
+.signup {
+}

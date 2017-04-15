@@ -27,10 +27,9 @@ export class LoginComponent {
               res => {
                   console.log("STUFF: ", res);
                   if (res && res.token) {
-                       // store user details and jwt token in local storage to keep user logged in between page refreshes
                        localStorage.setItem('TellTova_User', res.token);
                    }
-                  this.router.navigate(['/about']);
+                  this.router.navigate(['/dashboard']);
       },
              error => {
                  console.log("error", error);

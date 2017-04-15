@@ -1,25 +1,31 @@
-<div class="signup">
-    <h2>Register</h2>
-    <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
-        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
-            <label for="displayname">Display Name</label>
-            <input type="text" class="form-control" name="displayname" [(ngModel)]="model.displayname" #displayname="ngModel" required />
-            <div *ngIf="f.submitted && !displayname.valid" class="help-block">Display Name is required</div>
-        </div>
-        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
-            <label for="email">Email</label>
-            <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required />
-            <div *ngIf="f.submitted && !email.valid" class="help-block">Email is required</div>
-        </div>
-        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
-            <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
-        </div>
-        <div class="form-group">
-            <button [disabled]="loading" class="btn btn-primary">Sign up</button>
-            <!-- <a [routerLink]="['/login']" class="btn btn-link">Already have an accout? Log in here</a> -->
-        </div>
-    </form>
-</div>
-<login></login>
+<section class="authStuff">
+  <div class="auth-face">
+    <p class="face">(ಥ﹏ಥ)</p>
+    <p class="auth-text">You're Back! Oh, Hallelujah</p>
+  </div>
+  <login *ngIf="loginForm"></login>
+  <div class="signup" *ngIf="signupForm">
+      <h2>Register</h2>
+      <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
+              <label for="displayname"><span>Display Name</span></label>
+              <input type="text" class="form-control" name="displayname" [(ngModel)]="model.displayname" #displayname="ngModel" required />
+              <div *ngIf="f.submitted && !displayname.valid" class="help-block">Display Name is required</div>
+          </div>
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required />
+              <div *ngIf="f.submitted && !email.valid" class="help-block">Email is required</div>
+          </div>
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+              <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+          </div>
+          <div class="form-group">
+              <button [disabled]="loading" class="btn btn-primary">Sign up</button>
+          </div>
+      </form>
+  </div>
+  <button type="button" name="button" (click)="switchForms()">...Or Signup 'n Stuff</button>
+</section>

@@ -36,7 +36,7 @@ function ensureAuthenticated(req, res, next) {
   if (!req.header('Authorization')) {
     return res.status(401).send({ message: 'Please make sure your request has an Authorization header' });
   }
-  var token = req.header('Authorization').split(' ')[1];
+  var token = req.header('Authorization');
   var payload = null;
   try {
     payload = jwt.decode(token, config.TOKEN_SECRET);
@@ -53,7 +53,7 @@ function ensureAuthenticated(req, res, next) {
 
 //----Endpoints----//
 //----authCtrl----//
-app.get('/api/me', ensureAuthenticated, authCtrl.getMe);
+app.get('/api/me/', ensureAuthenticated, authCtrl.getMe);
 app.post('/auth/login', authCtrl.login);
 app.post('/auth/signup', authCtrl.signUp);
 

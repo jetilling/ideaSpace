@@ -1,0 +1,87 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  height: 45vh;
+}
+
+.login-title {
+  font-family: 'Questrial', sans-serif;
+  font-size: 30px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-email {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-email-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+  font-family: 'Questrial', sans-serif;
+  font-size: 20px;
+  outline: none;
+  width: 20vw;
+  height: 5vh;
+  transition: background-color 0.5s;
+}
+
+.login-email-input:focus {
+  background-color: #D8A2A1;
+  border-bottom: 2px solid black;
+}
+
+.login-email-input:valid {
+  background-color: #D8A2A1;
+}
+
+.login-email-label {
+  font-family: 'Questrial', sans-serif;
+}
+
+.login-password {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-password-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+  font-family: 'Questrial', sans-serif;
+  font-size: 20px;
+  outline: none;
+  width: 20vw;
+  height: 5vh;
+  transition: background-color 0.5s;
+}
+
+.login-password-input:focus {
+  background-color: #D8A2A1;
+  border-bottom: 2px solid black;
+}
+
+.login-password-input:valid {
+  background-color: #D8A2A1;
+}
+
+.login-password-label {
+  font-family: 'Questrial', sans-serif;
+}
+
+.login-button {
+  margin-left: 10px;
+}
