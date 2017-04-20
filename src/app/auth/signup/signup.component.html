@@ -1,10 +1,4 @@
-<section class="authStuff">
-  <div class="auth-face">
-    <p class="face">(ಥ﹏ಥ)</p>
-    <p class="auth-text">You're Back! Oh, Hallelujah</p>
-  </div>
-  <login *ngIf="loginForm"></login>
-  <div class="signup" *ngIf="signupForm">
+  <div class="signup">
       <h2>Register</h2>
       <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
           <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
@@ -27,5 +21,3 @@
           </div>
       </form>
   </div>
-  <button type="button" name="button" (click)="switchForms()">...Or Signup 'n Stuff</button>
-</section>

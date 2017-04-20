@@ -1,0 +1,9 @@
+<section class="authStuff">
+  <div class="auth-face">
+    <p class="face">(ಥ﹏ಥ)</p>
+    <p class="auth-text">You're Back! Oh, Hallelujah</p>
+  </div>
+  <login *ngIf="loginForm"></login>
+  <sign-up *ngIf="signupForm"></sign-up>
+  <button type="button" name="button" (click)="switchForms()">{{switchFormsText}}</button>
+</section>

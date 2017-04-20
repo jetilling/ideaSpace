@@ -35,6 +35,8 @@
   width: 20vw;
   height: 5vh;
   transition: background-color 0.5s;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
 }
 
 .login-email-input:focus {
@@ -84,4 +86,6 @@
 
 .login-button {
   margin-left: 10px;
+  border: none;
+  outline: none;
 }
