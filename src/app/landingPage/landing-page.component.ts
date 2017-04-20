@@ -1,7 +1,5 @@
 import { Component, OnInit }      from '@angular/core';
 
-import { LoginComponent } from '../login/login.component'
-
 @Component({
   moduleId: module.id,
   selector: 'idea-space',

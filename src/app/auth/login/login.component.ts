@@ -1,8 +1,8 @@
 import { Component }                             from '@angular/core';
 import {FormBuilder, FormControl, Validators, FormGroup} from '@angular/forms';
 import {Router}                                          from '@angular/router';
-import { AuthService }                                   from '../services/auth.service';
-import { ILoginData }                                     from '../interfaces';
+import { AuthService }                                   from '../../services/auth.service';
+import { ILoginData }                                     from '../../interfaces';
 
 
 @Component({
