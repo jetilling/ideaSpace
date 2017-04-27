@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'news',     component: NewsComponent },
   // { path: 'login',  component: LoginComponent },
   // { path: 'signup', component: SignupComponent },
-  { path: 'knock_knock', component: AuthComponent},
+  { path: 'login', component: AuthComponent},
   { path: 'dashboard', component: DashboardComponent }
 ];
 

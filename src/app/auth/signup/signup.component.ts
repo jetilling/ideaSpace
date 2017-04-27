@@ -1,7 +1,7 @@
 import { Component, OnInit }    from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AlertService, AuthService} from '../../services/index'; 
+import { AlertService, AuthService} from '../../services/index';
 
 @Component({
   moduleId: module.id,
@@ -12,9 +12,9 @@ import { AlertService, AuthService} from '../../services/index';
 
 export class SignupComponent implements OnInit {
   model: any = {};
-  loading = false;
-  loginForm = true;
-  signupForm = false;
+  loading: boolean = false;
+  loginForm: boolean = true;
+  signupForm: boolean = false;
 
   constructor(
       private router: Router,

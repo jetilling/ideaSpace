@@ -1,2 +1,59 @@
 .signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  height: 50vh;
+}
+
+.signup-title {
+  font-family: 'Questrial', sans-serif;
+  font-size: 30px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-input {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.field-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+  font-family: 'Questrial', sans-serif;
+  font-size: 20px;
+  outline: none;
+  width: 20vw;
+  height: 5vh;
+  transition: background-color 0.5s;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.field-input:focus {
+  background-color: #D8A2A1;
+  border-bottom: 2px solid black;
+}
+
+.field-input:valid {
+  background-color: #D8A2A1;
+}
+
+.field-label {
+  font-family: 'Questrial', sans-serif;
+}
+
+.signup-button {
+    margin-left: 10px;
+    border: none;
+    outline: none;
 }
