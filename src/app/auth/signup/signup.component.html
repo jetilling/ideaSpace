@@ -1,22 +1,22 @@
   <div class="signup">
-      <h2>Register</h2>
-      <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
-          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
-              <label for="displayname"><span>Display Name</span></label>
-              <input type="text" class="form-control" name="displayname" [(ngModel)]="model.displayname" #displayname="ngModel" required />
+      <h2 class="signup-title">Signup 'n Stuff</h2>
+      <form class="signup-form" name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+          <div class="form-input" [ngClass]="{ 'has-error': f.submitted && !displayname.valid }">
+              <input class="field-input" type="text" name="displayname" [(ngModel)]="model.displayname" #displayname="ngModel" required />
+              <label class="field-label" for="displayname"><span>Display Name</span></label>
               <div *ngIf="f.submitted && !displayname.valid" class="help-block">Display Name is required</div>
           </div>
-          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
-              <label for="email">Email</label>
-              <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required />
+          <div class="form-input" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
+              <input class="field-input" type="text" name="email" [(ngModel)]="model.email" #email="ngModel" required />
+              <label class="field-label" for="email">Email</label>
               <div *ngIf="f.submitted && !email.valid" class="help-block">Email is required</div>
           </div>
-          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+          <div class="form-input" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+              <input class="field-input" type="password"name="password" [(ngModel)]="model.password" #password="ngModel" required />
+              <label class="field-label" for="password">Password</label>
               <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
           </div>
-          <div class="form-group">
+          <div class="signup-button">
               <button [disabled]="loading" class="btn btn-primary">Sign up</button>
           </div>
       </form>

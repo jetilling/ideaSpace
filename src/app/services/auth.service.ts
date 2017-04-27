@@ -34,15 +34,10 @@ export class AuthService {
                     .catch(this.handleError);
   }
 
-  logout() {
-      // remove user from local storage to log user out
-      localStorage.removeItem('TellTova_User');
-  }
-
+  // create authorization header with jwt token
   private jwt() {
-       // create authorization header with jwt token
-       let tellTovaUser = localStorage.getItem('TellTova_User');
-       if (tellTovaUser && tellTovaUser) {
+       let tellTovaUser = document.cookie.split("TellTova_User=")[1];
+       if (tellTovaUser && tellTovaUser.split('.').length === 3) {
            let headers = new Headers({ 'Authorization': tellTovaUser});
            return new RequestOptions({ headers: headers });
        }

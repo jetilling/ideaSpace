@@ -17,8 +17,8 @@ export class DashboardComponent {
       private alertService: AlertService) { }
 
   logout() {
-      localStorage.removeItem('TellTova_User');
-      this.router.navigate(['/signup'])
+      document.cookie = 'TellTova_User=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;'
+      this.router.navigate(['/login'])
   }
 
 

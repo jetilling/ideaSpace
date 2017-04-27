@@ -1,4 +1,7 @@
 import { Component, OnInit }      from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AuthService }            from '../services/auth.service';
 
 @Component({
   moduleId: module.id,
@@ -8,8 +11,16 @@ import { Component, OnInit }      from '@angular/core';
 })
 
 export class LandingPageComponent implements OnInit {
-  title = 'Tova';
+  title: string = 'Tova';
+
+  constructor(private auth: AuthService){};
+
   ngOnInit() {
 
   }
+
+
+
+
+
 }

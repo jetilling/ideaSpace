@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 })
 
 export class AuthComponent {
-  loginForm = true;
-  signupForm = false;
-  switchFormsText = "Or Sign-up 'n Stuff"
+  loginForm: boolean = true;
+  signupForm: boolean = false;
+  switchFormsText: string = "Or Sign-up 'n Stuff"
 
   switchForms() {
     if (this.loginForm){

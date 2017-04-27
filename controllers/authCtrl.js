@@ -24,7 +24,7 @@ function getSafeUser (user) {
 }
 
 module.exports = {
-  
+
   getMe: function(req, res) {
     if (!req.user) return res.status(404);
     var user = req.user

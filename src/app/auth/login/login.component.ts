@@ -27,7 +27,7 @@ export class LoginComponent {
               res => {
                   console.log("STUFF: ", res);
                   if (res && res.token) {
-                       localStorage.setItem('TellTova_User', res.token);
+                       document.cookie = `TellTova_User=${res.token}; Path=/;`
                    }
                   this.router.navigate(['/dashboard']);
       },
