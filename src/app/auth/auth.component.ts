@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService }       from '../services/auth.service';
 
 @Component({
   moduleId: module.id,
@@ -7,10 +9,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./auth.component.css']
 })
 
-export class AuthComponent {
+export class AuthComponent implements OnInit {
   loginForm: boolean = true;
   signupForm: boolean = false;
-  switchFormsText: string = "Or Sign-up 'n Stuff"
+  switchFormsText: string = "Or Sign-up 'n Stuff";
+  tellTovaUser: string = document.cookie.split("TellTova_User=")[1];
+
+    constructor(private auth: AuthService,
+                private router: Router){}
+
+  ngOnInit() {
+    if(this.tellTovaUser && this.tellTovaUser.split('.').length === 3){
+    this.auth.getUser()
+      .subscribe(
+        res => {
+          if (res){
+            this.router.navigate(['/dashboard'])
+          }
+        }
+      )
+    }
+  }
 
   switchForms() {
     if (this.loginForm){

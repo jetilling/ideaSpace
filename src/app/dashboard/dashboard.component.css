@@ -1,0 +1,18 @@
+.dashboard-nav {
+  width: 75vw;
+  height: 10vh;
+}
+
+.dashboard-textarea-wrapper{
+
+}
+
+.dashboard-textarea {
+  width: 50vw;
+  height: 70vh;
+  outline: none;
+  margin-left: 20px;
+  border-radius: 2px;
+  font-family: 'Cutive Mono', monospace;
+  font-size: 20px;
+}
