@@ -1,4 +1,8 @@
-<div class="">
+<div class="dashboard-nav">
   You're in!
   <button type="button" name="button" (click)="logout()">Log out</button>
+  <button type="button" name="button" (click)="publish(newPost)">Publish</button>
+</div>
+<div class="dashboard-textarea-wrapper">
+  <textarea class="dashboard-textarea" name="newPost" rows="8" cols="80" maxlength="1000" autofocus (keyup)="onKeyUp(newPost)" [(ngModel)]="newPost">{{newPost}}</textarea>
 </div>

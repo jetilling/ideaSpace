@@ -22,16 +22,6 @@ export class SignupComponent implements OnInit {
       private alertService: AlertService) { }
 
   ngOnInit() {
-    if(localStorage.TellTova_User){
-    this.auth.getUser()
-      .subscribe(
-        res => {
-          if (res){
-            this.router.navigate(['/dashboard'])
-          }
-        }
-      )
-    }
   }
 
   switchForms() {
