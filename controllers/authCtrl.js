@@ -20,7 +20,8 @@ function getSafeUser (user) {
     email: user.email,
     first_name: user.first_name,
     last_name: user.last_name,
-    displayname: user.displayname
+    displayname: user.displayname,
+    token: createJWT(user)
   }
 }
 
@@ -46,10 +47,10 @@ module.exports = {
                   cb(err, isMatch);
                 });
               };
-                res.send({
-                token: createJWT(user),
-                user: getSafeUser(user)
-              })
+                res.send(
+                //token: createJWT(user),
+                getSafeUser(user)
+              )
             })
         })
   },

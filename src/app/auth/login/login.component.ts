@@ -28,6 +28,7 @@ export class LoginComponent {
                   console.log("STUFF: ", res);
                   if (res && res.token) {
                        document.cookie = `TellTova_User=${res.token}; Path=/;`
+                       localStorage.setItem('id', res.id+'');
                    }
                   this.router.navigate(['/dashboard']);
       },

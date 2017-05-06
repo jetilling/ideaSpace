@@ -1,18 +1,86 @@
-.dashboard-nav {
-  width: 75vw;
-  height: 10vh;
+.dashboard-buttons {
+  width: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.dashboard-textarea-wrapper{
+#logout-button {
+  outline: none;
+  border: none;
+  width: 100px;
+  height: 28px;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: #ca3c3c; /* this is a maroon */
+  font-size: 15px;
+}
 
+#publish-button {
+  outline: none;
+  border: none;
+  width: 100px;
+  height: 28px;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: #1cb841; /* this is a green */
+  font-size: 15px;
+}
+
+.dashboard-body {
+  display: flex;
+  margin-top: 5vh;
+}
+
+.dashboard-inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+#text-title {
+  width: 50vw;
+  height: 8vh;
+  outline: none;
+  margin-left: 20px;
+  border-radius: 2px;
+  font-family: 'Cutive Mono', monospace;
+  font-size: 35px;
+  border: 1px solid black;
+}
+
+.dashboard-textarea-wrapper {
+  margin-top: 10px;
 }
 
 .dashboard-textarea {
   width: 50vw;
   height: 70vh;
+  max-width: 50vw;
+  max-height: 70vh;
   outline: none;
   margin-left: 20px;
   border-radius: 2px;
   font-family: 'Cutive Mono', monospace;
   font-size: 20px;
+}
+
+.dashboard-right {
+
+}
+
+.side-bar {
+  width: 20vw;
+  height: 81vh;
+  background-color: #E5E5E5;
+  margin-left: 1vw;
+  border-radius: 2px;
+  border: 1px solid black
+}
+
+#side-bar-text {
+
 }

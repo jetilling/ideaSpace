@@ -1,8 +1,18 @@
-<div class="dashboard-nav">
-  You're in!
-  <button type="button" name="button" (click)="logout()">Log out</button>
-  <button type="button" name="button" (click)="publish(newPost)">Publish</button>
-</div>
-<div class="dashboard-textarea-wrapper">
-  <textarea class="dashboard-textarea" name="newPost" rows="8" cols="80" maxlength="1000" autofocus (keyup)="onKeyUp(newPost)" [(ngModel)]="newPost">{{newPost}}</textarea>
-</div>
+
+<section class="dashboard-body">
+  <div class="dashboard-inputs">
+    <input id="text-title" type="text" name="" value="" placeholder="Title" [(ngModel)]="title">
+    <div class="dashboard-textarea-wrapper">
+      <textarea class="dashboard-textarea" placeholder="Write something awesome!" [ngStyle]="{'font-size': size + 'px'}" name="newPost" rows="8" cols="80" maxlength="1000" autofocus (keyup)="onKeyUp(newPost)" [(ngModel)]="newPost">{{newPost}}</textarea>
+    </div>
+  </div>
+  <div class="dashboard-right">
+    <div class="side-bar">
+      <div class="dashboard-buttons">
+        <button id="logout-button" type="button" name="button" (click)="logout()">Log out</button>
+        <button id="publish-button" type="button" name="button" (click)="publish(title, newPost)">Publish</button>
+      </div>
+      <h1 id="side-bar-text">You're in!</h1>
+    </div>
+  </div>
+</section>
