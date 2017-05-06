@@ -23,7 +23,9 @@ export class AuthComponent implements OnInit {
     this.auth.getUser()
       .subscribe(
         res => {
+          console.log(res)
           if (res){
+            //localStorage.setItem('id', res.id.toString());
             this.router.navigate(['/dashboard'])
           }
         }

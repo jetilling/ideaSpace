@@ -1,13 +1,15 @@
 import { Injectable }                               from '@angular/core';
 import { Http, Headers, RequestOptions, Response }  from '@angular/http';
 import { User, ISignupData }                        from '../interfaces';
+import { CommonFunctions }                          from './commonFunctions.service';
 import { Observable }                               from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class AuthService {
-  constructor(private http: Http) {}
+  constructor(private http: Http,
+              private common: CommonFunctions) {}
 
   getUser(): Observable<string> {
     const url = '/api/me'
@@ -35,7 +37,7 @@ export class AuthService {
   }
 
   // create authorization header with jwt token
-  private jwt() {
+  jwt() {
        let tellTovaUser = document.cookie.split("TellTova_User=")[1];
        if (tellTovaUser && tellTovaUser.split('.').length === 3) {
            let headers = new Headers({ 'Authorization': tellTovaUser});

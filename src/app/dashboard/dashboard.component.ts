@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AlertService, AuthService} from '../services/index';
+import { DashboardService }         from './dashboard.service';
 
 interface event {
   keyCode: number,
@@ -16,18 +17,25 @@ interface event {
 })
 export class DashboardComponent {
   boldDecorator: string;
-  boldRegex: any = /(@Bold\(.+\))+/g;
+  boldRegex: any = /(@Size\(.+\))+/g;
   newPost: string;
+  size: number;
 
   constructor(
       private router: Router,
       private auth: AuthService,
-      private alertService: AlertService) { }
+      private alertService: AlertService,
+      private dashboardService: DashboardService) { }
 
   onKeyUp(newPost: string) {
-    if (this.boldRegex.test(newPost)){
+    let resultString: string;
+    let finalString: string;
 
-        this.newPost = newPost.replace(this.boldRegex, "BOLD")
+    if (this.boldRegex.test(newPost)){
+        resultString = newPost.match(this.boldRegex)[0].slice(6)
+        finalString = resultString.slice(0, resultString.length-1)
+        this.newPost = newPost.replace(this.boldRegex, "")
+        this.size = +finalString;
 
     }
 
@@ -36,12 +44,15 @@ export class DashboardComponent {
 
 
   logout() {
+      localStorage.removeItem('id')
       document.cookie = 'TellTova_User=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;'
       this.router.navigate(['/login'])
   }
 
-  publish(post: string){
-    console.log(post)
+  publish(title: string, post: string){
+    let id: string = localStorage.getItem('id')
+    console.log(title, post, id)
+    this.dashboardService.publishNewPost(title, post, id)
   }
 
 }

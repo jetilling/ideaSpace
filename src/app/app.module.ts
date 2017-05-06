@@ -18,6 +18,8 @@ import { AppRoutingModule }        from './app-routing.module';
 
 //Services
 import { AuthService, AlertService }          from './services/index';
+import { CommonFunctions }                    from './services/commonFunctions.service';
+import { DashboardService }                   from './dashboard/dashboard.service';
 
 //Modules
 
@@ -43,7 +45,9 @@ import { AuthService, AlertService }          from './services/index';
   ],
   providers: [
     AuthService,
-    AlertService
+    AlertService,
+    CommonFunctions,
+    DashboardService
   ],
   bootstrap: [ LandingPageComponent ]
 })
