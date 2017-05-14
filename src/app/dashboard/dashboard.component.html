@@ -1,9 +1,9 @@
 
 <section class="dashboard-body">
   <div class="dashboard-inputs">
-    <input id="text-title" type="text" name="" value="" placeholder="Title" [(ngModel)]="title">
+    <input id="text-title" type="text" name="" value="" placeholder="Title" [ngStyle]="titleStyles" (keyup)="editStyles(title, false)" [(ngModel)]="title">
     <div class="dashboard-textarea-wrapper">
-      <textarea class="dashboard-textarea" placeholder="Write something awesome!" [ngStyle]="{'font-size': size + 'px'}" name="newPost" rows="8" cols="80" maxlength="1000" autofocus (keyup)="onKeyUp(newPost)" [(ngModel)]="newPost">{{newPost}}</textarea>
+      <textarea class="dashboard-textarea" placeholder="Write something awesome!" [ngStyle]="bodyStyles" name="newPost" rows="8" cols="80" maxlength="1000" autofocus (keyup)="editStyles(newPost, true)" [(ngModel)]="newPost">{{newPost}}</textarea>
     </div>
   </div>
   <div class="dashboard-right">
@@ -12,7 +12,10 @@
         <button id="logout-button" type="button" name="button" (click)="logout()">Log out</button>
         <button id="publish-button" type="button" name="button" (click)="publish(title, newPost)">Publish</button>
       </div>
-      <h1 id="side-bar-text">You're in!</h1>
+      <div class="side-bar-text">
+        <h1 id="side-bar-header">You're in!</h1>
+        <p class="side-bar-intro">This is where you can...</p>
+    </div>
     </div>
   </div>
 </section>

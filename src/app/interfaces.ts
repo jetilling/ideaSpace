@@ -28,3 +28,11 @@ export class User {
     lastName: string;
     token: string;
 }
+
+/**
+* Interface for title/post font styles
+*/
+export interface IStyles {
+  'font-size': string,
+  'font-family': string
+}
