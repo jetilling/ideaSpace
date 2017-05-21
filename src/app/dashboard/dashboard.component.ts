@@ -5,7 +5,8 @@ import { AlertService, AuthService} from '../services/index';
 import { DashboardService }         from './dashboard.service';
 import { IStyles }                   from '../interfaces';
 
-interface event {
+interface event 
+{
   keyCode: number,
   key: string
 }
@@ -16,7 +17,8 @@ interface event {
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent 
+{
   boldDecorator: string;
   sizeRegex: any = /(@Size\(.+\))+/g;
   fontRegex: any = /(@Font\(.+\))+/g;
@@ -43,32 +45,40 @@ export class DashboardComponent {
   * @param {string} text - content of title or post
   * @param {boolean} body - trigger that states whether text is from the title or the body
   */
-  editStyles(text: string, body: boolean) {
+  editStyles(text: string, body: boolean) 
+  {
     let resultString: string;
     let finalString: string;
 
-    if (this.sizeRegex.test(text)){
+    if (this.sizeRegex.test(text))
+    {
       resultString = text.match(this.sizeRegex)[0].slice(6)
       finalString = resultString.slice(0, resultString.length-1)
-      if (+finalString > 14 && +finalString < 31) {
-        if (body) {
+      if (+finalString > 14 && +finalString < 31) 
+      {
+        if (body) 
+        {
           this.newPost = text.replace(this.sizeRegex, "")
           this.bodyStyles['font-size'] = finalString + 'px';
         }
-        else {
+        else 
+        {
           this.title = text.replace(this.sizeRegex, "")
           this.titleStyles['font-size'] = finalString + 'px';
         }
       }
     }
-    else if (this.fontRegex.test(text)){
+    else if (this.fontRegex.test(text))
+    {
       resultString = text.match(this.fontRegex)[0].slice(6)
       finalString = resultString.slice(0, resultString.length-1)
-      if (body) {
+      if (body) 
+      {
         this.newPost = text.replace(this.fontRegex, "")
         this.bodyStyles['font-family'] = finalString
       }
-      else {
+      else 
+      {
         this.title = text.replace(this.fontRegex, "")
         this.titleStyles['font-family'] = finalString
       }
@@ -79,10 +89,10 @@ export class DashboardComponent {
   /**
   * Logs user out
   */
-  logout() {
-      localStorage.removeItem('id')
-      document.cookie = 'TellTova_User=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;'
-      this.router.navigate(['/login'])
+  logout() 
+  {
+    let loggedOut = this.dashboardService.logout()
+    if (loggedOut) this.router.navigate(['/login'])
   }
 
   /**
@@ -90,7 +100,8 @@ export class DashboardComponent {
   * @param {string} title - title of post
   * @param {string} body - body of post
   */
-  publish(title: string, body: string){
+  publish(title: string, body: string)
+  {
     let id: string = localStorage.getItem('id')
     console.log(title, body, id, this.titleStyles, this.bodyStyles)
     this.dashboardService.publishNewPost(title, body, id, this.titleStyles, this.bodyStyles)
