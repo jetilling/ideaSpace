@@ -14,13 +14,20 @@ namespace Tova
                      post: string, 
                      id: string, 
                      titleStyles: IStyles, 
-                     bodyStyles: IStyles) => Observable<string>
+                     bodyStyles: IStyles) => Observable<string>,
+   
+    /**
+     * Logs user out
+     */
+    logout: () => boolean
   }
 }
 
+//--------Angular Imports---------//
 import { Injectable }                               from '@angular/core';
 import { Http, Headers, RequestOptions, Response }  from '@angular/http';
 
+//--------Other Imports----------//
 import { CommonFunctions }                          from '../services/commonFunctions.service';
 import { Observable }                               from 'rxjs/Observable';
 import { IStyles }                                  from '../interfaces';
@@ -42,7 +49,7 @@ export class DashboardService implements Tova.IDashboardService
         .catch(this.common.handleError)
   }
 
-  logout() 
+  logout(): boolean 
   {
     localStorage.removeItem('id')
     document.cookie = 'TellTova_User=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;'
