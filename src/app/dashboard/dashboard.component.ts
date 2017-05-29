@@ -1,15 +1,11 @@
+//--------Angular Imports---------//
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+//--------Other Imports----------//
 import { AlertService, AuthService} from '../services/index';
 import { DashboardService }         from './dashboard.service';
 import { IStyles }                   from '../interfaces';
-
-interface event 
-{
-  keyCode: number,
-  key: string
-}
 
 @Component({
   moduleId: module.id,
@@ -17,6 +13,7 @@ interface event
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
+
 export class DashboardComponent 
 {
   boldDecorator: string;

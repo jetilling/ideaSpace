@@ -12,11 +12,21 @@
   border: none;
   width: 100px;
   height: 28px;
-  color: white;
-  border-radius: 4px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  background: #ca3c3c; /* this is a maroon */
+  color: black;
+  background: transparent;
+  border: 1px solid #2A2C2B;
+  border-radius: 2px;
+  /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: #C3C8CA;*/
+  font-family: 'Questrial', sans-serif;
   font-size: 15px;
+}
+
+#logout-button:hover {
+  border: 2px solid #ca3c3c;
+  /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);*/
+  color: white;
+  background: #ca3c3c;
 }
 
 #publish-button {
@@ -24,11 +34,21 @@
   border: none;
   width: 100px;
   height: 28px;
-  color: white;
-  border-radius: 4px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  background: #1cb841; /* this is a green */
+  color: black;
+  background: transparent;
+  border: 1px solid #2A2C2B;
+  border-radius: 2px;
+  /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: #1cb841;*/
+  font-family: 'Questrial', sans-serif;
   font-size: 15px;
+}
+
+#publish-button:hover {
+  border: 2px solid #1cb841;
+  /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);*/
+  color: white;
+  background: #1cb841;
 }
 
 .dashboard-body {
@@ -81,6 +101,13 @@
   border: 1px solid black
 }
 
-.side-bar-text {
+#side-bar-header {
+  font-family: 'Questrial', sans-serif;
+  margin: 5px;
+}
 
+.side-bar-text {
+  font-family: 'Questrial', sans-serif;
+  margin: 5px;
+  line-height: 20px;
 }
