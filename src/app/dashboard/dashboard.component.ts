@@ -103,7 +103,7 @@ export class DashboardComponent
     this.dashboardService.publishNewPost(title, body, id, this.titleStyles, this.bodyStyles)
     .subscribe(
       res => {
-        console.log(res)
+        if (res) 
       }
     )
   }
