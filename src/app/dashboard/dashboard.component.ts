@@ -99,9 +99,13 @@ export class DashboardComponent
   */
   publish(title: string, body: string)
   {
-    let id: string = localStorage.getItem('id')
-    console.log(title, body, id, this.titleStyles, this.bodyStyles)
+    const id: string = localStorage.getItem('id')
     this.dashboardService.publishNewPost(title, body, id, this.titleStyles, this.bodyStyles)
+    .subscribe(
+      res => {
+        console.log(res)
+      }
+    )
   }
 
 }

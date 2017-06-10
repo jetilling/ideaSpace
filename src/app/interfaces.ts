@@ -32,7 +32,20 @@ export class User {
 /**
 * Interface for title/post font styles
 */
-export interface IStyles {
+export interface IStyles
+{
   'font-size': string,
   'font-family': string
+}
+
+/**
+ * Interface for sending new post to the database
+ */
+export interface IPostObject
+{
+  title: string,
+  post: string,
+  id: string,
+  titleStyles: IStyles,
+  bodyStyles: IStyles
 }

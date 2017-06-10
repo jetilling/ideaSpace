@@ -30,7 +30,7 @@ import { Http, Headers, RequestOptions, Response }  from '@angular/http';
 //--------Other Imports----------//
 import { CommonFunctions }                          from '../services/commonFunctions.service';
 import { Observable }                               from 'rxjs/Observable';
-import { IStyles }                                  from '../interfaces';
+import { IStyles, IPostObject }                     from '../interfaces';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
@@ -43,8 +43,16 @@ export class DashboardService implements Tova.IDashboardService
 
   publishNewPost(title: string, post: string, id: string, titleStyles: IStyles, bodyStyles: IStyles): Observable<string> 
   {
-    const url = '/api/publishNewPost';
-    return this.http.post(url, JSON.stringify(post), this.common.jwt())
+    const postObject: IPostObject = {
+      title: title,
+      post: post,
+      id: id,
+      titleStyles: titleStyles,
+      bodyStyles: bodyStyles
+    }
+    console.log(postObject)
+    let url = '/api/publishNewPost';
+    return this.http.post(url, postObject, this.common.jwt())
         .map(this.common.extractData)
         .catch(this.common.handleError)
   }
