@@ -47,5 +47,6 @@ export interface IPostObject
   post: string,
   id: string,
   titleStyles: IStyles,
-  bodyStyles: IStyles
+  bodyStyles: IStyles,
+  identificationString: string
 }

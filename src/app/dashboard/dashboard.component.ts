@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 //--------Other Imports----------//
 import { AlertService, AuthService} from '../services/index';
-import { DashboardService }         from './dashboard.service';
+import { DashboardService }         from '../services/dashboard.service';
 import { IStyles }                   from '../interfaces';
 
 @Component({
@@ -101,11 +101,6 @@ export class DashboardComponent
   {
     const id: string = localStorage.getItem('id')
     this.dashboardService.publishNewPost(title, body, id, this.titleStyles, this.bodyStyles)
-    .subscribe(
-      res => {
-        if (res) 
-      }
-    )
   }
 
 }
