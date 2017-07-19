@@ -12,6 +12,7 @@ import { ContactComponent }     from './contact/contact.component';
 import { NewsComponent }        from './news/news.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { AuthComponent }        from './auth/auth.component';
+import { ProfileComponent }     from './profile/profile.component';
 
 //Routing
 import { AppRoutingModule }        from './app-routing.module';
@@ -19,9 +20,7 @@ import { AppRoutingModule }        from './app-routing.module';
 //Services
 import { AuthService, AlertService }          from './services/index';
 import { CommonFunctions }                    from './services/commonFunctions.service';
-import { DashboardService }                   from './dashboard/dashboard.service';
-
-//Modules
+import { DashboardService }                   from './services/dashboard.service';
 
 
 @NgModule({
@@ -41,7 +40,8 @@ import { DashboardService }                   from './dashboard/dashboard.servic
     ContactComponent,
     NewsComponent,
     DashboardComponent,
-    AuthComponent
+    AuthComponent,
+    ProfileComponent
   ],
   providers: [
     AuthService,

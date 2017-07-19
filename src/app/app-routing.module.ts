@@ -6,6 +6,7 @@ import { ContactComponent }     from './contact/contact.component';
 import { NewsComponent }        from './news/news.component';
 import { AuthComponent }        from './auth/auth.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
+import { ProfileComponent }     from './profile/profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/about', pathMatch: 'full' },
@@ -13,7 +14,9 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'news',     component: NewsComponent },
   { path: 'login', component: AuthComponent},
-  { path: 'dashboard', component: DashboardComponent }
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'profile/:displayName', component: ProfileComponent },
+  { path: 'profile/:displayName/:id', component: ProfileComponent }
 ];
 
 @NgModule({
