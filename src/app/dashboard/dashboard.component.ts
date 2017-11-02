@@ -19,6 +19,8 @@ export class DashboardComponent
   boldDecorator: string;
   sizeRegex: any = /(@Size\(.+\))+/g;
   fontRegex: any = /(@Font\(.+\))+/g;
+  paragraph: any = /(@P)/g;
+  cleanse: any = /(<script>)/g;
   newPost: string;
   title: string;
   bodyStyles: IStyles = {
@@ -80,6 +82,12 @@ export class DashboardComponent
         this.titleStyles['font-family'] = finalString
       }
     }
+    else if (this.cleanse.test(text))
+    {
+      finalString = text.match(this.cleanse)[0]
+      console.log(resultString)
+      this.newPost = text.replace(this.cleanse, "")
+    }
   }
 
 
@@ -100,6 +108,14 @@ export class DashboardComponent
   publish(title: string, body: string)
   {
     const id: string = localStorage.getItem('id')
+    function escapeHtml(str: string) {
+      var div = document.createElement('div');
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    }
+    
+    let safeTitle = escapeHtml(title)
+    let safeBody = escapeHtml(body)
     this.dashboardService.publishNewPost(title, body, id, this.titleStyles, this.bodyStyles)
   }
 

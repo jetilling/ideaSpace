@@ -18,5 +18,8 @@ export class ProfileService
               private common: CommonFunctions,
               private router: Router) {}
 
+  getAllWork(displayName: string) {
+    
+  }
 
 }

@@ -1,10 +1,11 @@
 //--------Angular Imports---------//
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit }                    from '@angular/core';
+import { Router, ActivatedRoute, Params }       from '@angular/router';
 
 //--------Other Imports----------//
-import { AuthService } from '../services/auth.service';
-import { ProfileService } from '../services/profile.service';
+import { Observable }                               from 'rxjs/Observable';
+import { AuthService }                          from '../services/auth.service';
+import { ProfileService }                       from '../services/profile.service';
 
 @Component({
     moduleId: module.id,
@@ -15,10 +16,18 @@ import { ProfileService } from '../services/profile.service';
 
 export class ProfileComponent implements OnInit {
 
-    constructor(private auth: AuthService) {}
+    constructor(private auth: AuthService,
+                private profileService: ProfileService,
+                private route: ActivatedRoute,
+                private router: Router) {}
 
     ngOnInit() {
+        this.route.params
+            .subscribe(params => {
+                this.profileService.getAllWork(params.displayName)
+            });
 
     }
+
     
 }
